@@ -9,3 +9,5 @@
 
 # Add a blanc line between each sting/verse of your text/poem using any method you prefer.
 #TODO:
+print("Today I saw\t a beautiful \t river")
+print("She replied \"I totally agree\"")
