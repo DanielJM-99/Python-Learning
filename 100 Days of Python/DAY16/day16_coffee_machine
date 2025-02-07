@@ -1,0 +1,27 @@
+# Coffe machine with OOP
+
+from menu import Menu
+from coffee_maker import CoffeeMaker
+from money_machine import MoneyMachine
+
+new_menu = Menu()
+coffe_machine = CoffeeMaker()
+get_money = MoneyMachine()
+
+coffe_on = True
+
+while coffe_on:
+
+    choice = input(f"What would you like? ({new_menu.get_items()}): ").lower()
+
+    if choice == "off":
+        coffe_on = False
+    elif choice == "report":
+        coffe_machine.report()
+        get_money.report()
+    else:
+        users_drink = new_menu.find_drink(choice)
+        if users_drink is not None:
+            if coffe_machine.is_resource_sufficient(users_drink):
+                if get_money.make_payment(users_drink.cost):
+                    coffe_machine.make_coffee(users_drink)
