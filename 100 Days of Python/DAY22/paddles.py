@@ -27,5 +27,4 @@ class Paddle(Turtle):
             sq_cor_x = self.squares[sq_num - 1].xcor()
             sq_cor_y = self.squares[sq_num - 1].ycor()
             self.squares[sq_num].goto(sq_cor_x, sq_cor_y)
-        
         self.squares[0].forward(20)
