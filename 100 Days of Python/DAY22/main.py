@@ -4,7 +4,6 @@ from paddles import Paddle
 
 #Create the screen
 pong_screen = Screen()
-
 pong_screen.setup(width=1000, height=500)
 pong_screen.bgcolor("black")
 pong_screen.tracer(0)
@@ -13,8 +12,7 @@ pong_screen.listen()
 paddle = Paddle()
 
 #Create paddle
-paddle.new_paddle()
-
+# paddle.new_paddle()
 
 game_is_on = True
 
