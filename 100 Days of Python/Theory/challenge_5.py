@@ -4,8 +4,9 @@ import random as rand
 tim = t.Turtle()
 tim.speed("fastest")
 tim.pensize(15)
-scr = t.Screen()
 t.colormode(255)
+
+scr = t.Screen()
 
 # Challenge 5: Draw a random walk, random color, thickness, faster
 
