@@ -19,7 +19,7 @@ while snake_moving:
     screen.onkey(key = "Left", fun = snake.left)
     screen.onkey(key = "Right", fun = snake.right)
 
-    time.sleep(0.2)
+    time.sleep(0.1)
     screen.update()
     
     # 2 Move the snake body
