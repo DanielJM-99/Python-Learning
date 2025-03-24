@@ -41,3 +41,4 @@ class Snake:
             pass
         else:
             self.head.setheading(180) 
+            
