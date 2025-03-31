@@ -4,12 +4,21 @@ import random as r
 class Food(turtle.Turtle):
     def __init__(self):
         super().__init__()
-        self.create_food()
+        self.hideturtle()
+
+    def change_color(self):
+        self.red = r.uniform(0, 1)
+        self.green = r.uniform(0, 1)
+        self.blue = r.uniform(0, 1)
+        self.new_color = (self.red, self.green, self.blue)
+        return (self.new_color)
 
     def create_food(self):
-        new_food = turtle.Turtle("circle")
-        new_food.color("blue")
-        new_food.penup()
+        self.showturtle()
+        self.shape("turtle")
+        self.color(self.change_color())
+        self.shapesize(0.8, 0.8)
+        self.penup()
         x_axis = r.randint(-280, 280)
         y_axis = r.randint(-280, 280)
-        new_food.goto(x=x_axis, y=y_axis)
+        self.goto(x=x_axis, y=y_axis)
