@@ -2,14 +2,11 @@ from turtle import Turtle, Screen
 import time 
 from paddles import Paddles
 
-
 # 1: Create screen
 pong_screen = Screen()
 pong_screen.setup(width=1000, height=600)
 pong_screen.bgcolor("black")
 pong_screen.tracer(0)
-
-
 
 # 2: Create paddle
 user_paddle = Paddles()
@@ -23,7 +20,7 @@ game_on = True
 while game_on:
         # Screen update
         pong_screen.update()
-        time.sleep(0.1)
+        time.sleep(0.08)
 
         ## 2.1: Move paddle
         user_paddle.move_paddle()

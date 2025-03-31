@@ -25,10 +25,17 @@ class Paddles(Turtle):
             new_pos = self.paddle_segments[segment - 1].position()
             self.paddle_segments[segment].goto(new_pos)
         self.paddle_segments[0].forward(20)
-
+        
     def move_up(self):
+        # Reverse list
+        self.paddle_segments.reverse()
+        # Head upwards
         self.paddle_segments[0].setheading(UP)
 
     def move_down(self):
-        self.paddle_segments[0].setheading(DOWN)
-
+        # Head downwards
+        if self.paddle_segments[0].heading() != DOWN:
+            self.paddle_segments.reverse()
+        else:
+            self.paddle_segments[0].setheading(DOWN)
+        
