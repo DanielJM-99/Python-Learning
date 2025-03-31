@@ -1,33 +1,34 @@
 from turtle import Turtle
-COORDINATES = [(-480,0),(-480,20), (-480,40)]
-HEADING = [90, 270]
 
-class Paddle(Turtle):
+POSITIONS = [(-480, 0), (-480, 20), (-480, 40), (-480, 60)]
+UP = 90
+DOWN = 270
+
+class Paddles(Turtle):
 
     def __init__(self):
         super().__init__()
-        self.squares = []
-        self.new_paddle()
-        self.head = self.squares[0]
-        self.head.setheading(HEADING[0])
-
-    def new_paddle(self):
-        for location in COORDINATES:
-            new_square = Turtle("square")
-            new_square.color("white")
-            new_square.penup()
-            new_square.goto(location)
-            self.squares.append(new_square)
+        self.paddle_segments = []
+        self.create_paddle()
+        self.paddle_segments[0].setheading(DOWN)
     
+    def create_paddle(self):
+        for starting_position in POSITIONS:
+            pd_seg = Turtle("square")
+            pd_seg.color("white")
+            pd_seg.penup()
+            pd_seg.goto(starting_position)
+            self.paddle_segments.append(pd_seg)
+
+    def move_paddle(self):
+        for segment in range(len(self.paddle_segments)- 1, 0, -1):
+            new_pos = self.paddle_segments[segment - 1].position()
+            self.paddle_segments[segment].goto(new_pos)
+        self.paddle_segments[0].forward(20)
+
     def move_up(self):
-        self.head.setheading(HEADING[0])
-    
-    def move_down(self):
-        self.head.setheading(HEADING[1])
+        self.paddle_segments[0].setheading(UP)
 
-    def move(self):
-        for sq_num in range(len(self.squares)-1, 0, -1):
-            sq_cor_x = self.squares[sq_num - 1].xcor()
-            sq_cor_y = self.squares[sq_num - 1].ycor()
-            self.squares[sq_num].goto(sq_cor_x, sq_cor_y)
-        self.head.forward(20)
+    def move_down(self):
+        self.paddle_segments[0].setheading(DOWN)
+

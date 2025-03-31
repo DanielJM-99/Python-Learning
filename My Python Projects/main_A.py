@@ -1,6 +1,6 @@
 import turtle as t
 import time
-from snake import Snake
+from snake_a import Snake
 from food_a import Food
 from scoreboard_a import Scoreboard
 
