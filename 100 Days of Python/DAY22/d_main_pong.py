@@ -1,6 +1,6 @@
 from turtle import Turtle, Screen
 import time 
-from paddles import Paddles
+from d_paddles import Paddles
 
 # 1: Create screen
 pong_screen = Screen()
@@ -20,6 +20,9 @@ game_on = True
 while game_on:
         # Screen update
         pong_screen.update()
-        time.sleep(0.08)
+        time.sleep(0.2)
+        
+        paddles.comp_paddle()
+
 
 pong_screen.exitonclick()
