@@ -21,5 +21,8 @@ while game_on:
         # Screen update
         pong_screen.update()
         time.sleep(0.08)
+        
+        # Move computer paddle
+        paddles.move_computer()
 
 pong_screen.exitonclick()
