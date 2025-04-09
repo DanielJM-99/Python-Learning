@@ -1,8 +1,5 @@
 from turtle import Turtle
 
-UP = 90
-DOWN = 270
-
 class Paddles(Turtle):
 
     def __init__(self, start_pos):

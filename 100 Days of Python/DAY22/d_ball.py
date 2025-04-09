@@ -7,15 +7,20 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("green")
         self.penup()
-        self.speed_x = 10
-        self.speed_y = 5
+        self.increment_x = 10
+        self.increment_y = 10
 
     def move_ball_r(self):
-        if self.xcor() >= 380 or self.xcor() <= -380  or self.ycor() >= 280 or self.ycor() <= -280:
-            self.speed_x *= -1
-            self.speed_y *= -1
-        new_x = self.xcor() + self.speed_x
-        new_y = self.ycor() + self.speed_y
+        #Detect wall colission    
+        if self.ycor() > 280 or self.ycor() < -280:
+            self.increment_y *= -1
+            
+        # Moves ball
+        new_x = self.xcor() + self.increment_x
+        new_y = self.ycor() + self.increment_y
         self.goto(new_x, new_y)
-
-
+        
+    def reset_pos(self):
+        self.goto(0,0)
+        self.increment_x /= 2
+        self.increment_x *= -1
