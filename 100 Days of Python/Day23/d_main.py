@@ -14,10 +14,10 @@
 
 from turtle import Turtle, Screen
 import time
-from user import User
-from cars import Cars
+from d_user import User
+from d_cars import Cars
 import random as r
-from scoreboard import Scoreboard
+from d_scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -37,6 +37,7 @@ while game_on:
     time.sleep(0.1)
     screen.update()
     
+    # Can be changed to 1,6
     if r.randint(0, 5) == 1:
         cars.create_cars()
     cars.move()
