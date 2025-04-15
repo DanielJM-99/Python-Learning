@@ -47,8 +47,14 @@ while game_on:
         cars.next_level()
         player.move_to_beginning()
         
-    for car in range(len(cars.list_of_cars)):
-        if player.distance(cars.list_of_cars[car]) < 30:
+    # Should be changed to for car in self.list_of_cars
+    # for car in range(len(cars.list_of_cars)):
+    #     if player.distance(cars.list_of_cars[car]) < 30:
+    #         scoarboard.game_over()
+    #         game_on = False
+    
+    for car in cars.list_of_cars:
+        if player.distance(car) < 25:
             scoarboard.game_over()
             game_on = False
     
