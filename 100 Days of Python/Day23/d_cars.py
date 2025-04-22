@@ -22,8 +22,10 @@ class Cars():
         
     def move(self):
         # Should be changed to for car in self.list_of_cars
-        for _ in range(len(self.list_of_cars)):
-            self.list_of_cars[_].forward(self.speed)
+        # for _ in range(len(self.list_of_cars)):
+        #     self.list_of_cars[_].forward(self.speed)
+        for car in self.list_of_cars:
+            car.forward(self.speed)
             
     def next_level(self):
         self.speed += 5
