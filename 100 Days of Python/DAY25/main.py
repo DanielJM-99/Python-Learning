@@ -59,7 +59,7 @@ print(data[data.temp == max_temp])
 # Specific values of rows
 monday = data[data.day == "Monday"]
 
-# Convert specific values
+# Convert specific values (Series)
 temp_in_cels = monday.temp[0]
 farenheit = (temp_in_cels * 9/5) + 32
 print(farenheit)

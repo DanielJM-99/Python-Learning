@@ -8,6 +8,9 @@ squirrel_data = pandas.read_csv("./100 Days of Python/DAY25/2018_Central_Park_Sq
 # Only select required column
 fur_colors = squirrel_data["Primary Fur Color"]
 
+# Easier way
+#unique_count_data = fur_colors.value_counts()
+
 # Converto into list
 colors_list = fur_colors.to_list()
 
@@ -29,3 +32,7 @@ print(color_dictionary)
 count_data = pandas.DataFrame([color_dictionary])
 print(count_data)
 count_data.to_csv("squirrel_colors.csv")
+
+# Create dataframe2 then csv
+# count_data = pandas.DataFrame([unique_count_data])
+# print(count_data)
