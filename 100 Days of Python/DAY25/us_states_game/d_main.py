@@ -18,7 +18,7 @@ game_on = True
 while game_on:
 
     screen.update()
-    answer_state = screen.textinput(title=f"({score}/50) States Correct", prompt="What's another state's name?")
+    answer_state = screen.textinput(title=f"({score}/50) States Correct", prompt="What's another state's name?").title()
 
     # Get specific info if answer matches csv file
     ## Get x,y coord
