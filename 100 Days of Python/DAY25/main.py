@@ -52,11 +52,11 @@ max_temp = data["temp"].max()
 # OR
 # print(data.temp)
 
-# Get data by rows with filters Table[table.column == "row_attribute"]
+# Get data by rows with filters table[table.column == "row_attribute"]
 print(data[data.day == "Monday"])
 print(data[data.temp == max_temp])
 
-# Specific values of rows
+# Specific values of rows 
 monday = data[data.day == "Monday"]
 
 # Convert specific values (Series)
