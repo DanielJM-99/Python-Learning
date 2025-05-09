@@ -1,20 +1,20 @@
 states,x,y
-Aguascalientes,-25,-72
+Aguascalientes,-25,-80
 Baja California,-380,193
 Baja California Sur,-298,44
 Campeche,347,-161
 Chiapas,280,-243
 Chihuahua,-137,143
-Ciudad de Mexico,73,-160
+Ciudad De Mexico,72,-170
 Coahuila,-22,91
-Colima,-73,-166
+Colima,-73,-175
 Durango,-98,21
-Estado de Mexico,57,-154
-Guanajuato,12,-106
+Estado De Mexico,57,-154
+Guanajuato,20,-110
 Guerrero,53,-217
-Hidalgo,79,-122
+Hidalgo,79,-135
 Jalisco,-68,-128
-Michoacan,-5,-158
+Michoacan,0,-165
 Morelos,75,-178
 Nayarit,-100,-82
 Nuevo Leon,51,46
@@ -25,9 +25,9 @@ Quintana Roo,411,-137
 San Luis Potosi,43,-66
 Sinaloa,-174,14
 Sonora,-258,187
-Tabasco,-275,-193
+Tabasco,267,-193
 Tamaulipas,93,-8
 Tlaxcala,105,-156
-Veracruz,148,-147
-Yucatan,376,-95
-Zacatecas,-51,-29
+Veracruz,160,-150
+Yucatan,376,-100
+Zacatecas,-48,-40

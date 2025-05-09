@@ -39,19 +39,35 @@ states_data = pandas.read_csv("./100 Days of Python/DAY25/mx_states_game/mx_stat
 states_column = states_data.states
 state_list = states_column.to_list()
 
+new_turtle = turtle.Turtle()
 user_ans = ""
+answer_list = []
+lifes = 3
+
 while user_ans != "Exit":
 
-    user_ans = screen.textinput("SCORE (0/32)", "NAMES OF THE STATES IN MEXICO? ").title()
+    user_ans = screen.textinput(f"SCORE ({len(answer_list)}/32) - LIFES ({lifes}/3)", "NAMES OF THE STATES IN MEXICO? ").title()
 
     # Check if user answer is in list of states
-    if user_ans in state_list:
+    if user_ans in state_list and user_ans not in answer_list:
+        # If yes write Name in correct coordinate
         state_row = states_data[states_data.states == user_ans]
         x_cord = state_row.x.item()
         y_cord = state_row.y.item()
-        new_turtle = turtle.Turtle()
         new_turtle.hideturtle()
         new_turtle.penup()
         new_turtle.goto(x_cord, y_cord)
         new_turtle.write(f"{user_ans}", align="center")
-    # If yes write Name in correct coordinate
+        answer_list.append(user_ans)
+    if user_ans not in state_list:
+        lifes -= 1
+    if lifes == 0:
+        new_turtle.goto(-100, -50)
+        new_turtle.write("YOU HAVE LOST!!", move=False, align='left', font=('Arial', 20, 'normal'))
+        break 
+    elif len(state_list) == len(answer_list):
+        new_turtle.goto(-100, -50)
+        new_turtle.write("YOU HAVE WON!! ;)", move=False, align='left', font=('Arial', 20, 'normal'))
+        break
+        
+screen.exitonclick()
